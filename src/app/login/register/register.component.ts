@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import UserAddDTO from 'src/app/Types/Users/UserAddDto';
 import { HelperService } from 'src/app/services/helper.service';
 import { UserService } from 'src/app/services/user.service';
@@ -13,11 +13,16 @@ export class RegisterComponent {
   Registerform=new FormGroup({
     userName: new FormControl<string>('',[]
     ),
-    password: new FormControl<string>('',[]
+    password: new FormControl<string>('',[
+      Validators.minLength(8)
+    ]
     ),
-    phone: new FormControl<string>('',[]
+    phone: new FormControl<string>('',[
+    ]
     ),
-    Email: new FormControl<string>('',[]
+    Email: new FormControl<string>('',[
+      Validators.email
+    ]
     ),
     Location: new FormControl<string>('',[]
     )
