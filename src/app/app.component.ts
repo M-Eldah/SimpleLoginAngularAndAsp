@@ -10,4 +10,5 @@ import { UserDetailsDTO } from './Types/Users/UserDetailsDto';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  screenheight: number=screen.height-260;
 }
